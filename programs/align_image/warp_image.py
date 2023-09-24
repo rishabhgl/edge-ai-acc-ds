@@ -22,8 +22,15 @@ strt_ref = np.float32(plt.ginput(4))
 print(strt_ref)
 
 transform = cv2.getPerspectiveTransform(tilt_ref, strt_ref)
-straightened = cv2.warpPerspective(image_tilt, transform, (image_strt.shape[1], image_strt.shape[0]))
+straightened = cv2.warpPerspective(image_tilt_RGB, transform, (image_strt.shape[1], image_strt.shape[0]))
 
-plt.imshow(image_strt_RGB)
-plt.title("Strightened image!")
+
+plt.subplot(121)
+plt.imshow(image_tilt_RGB)
+plt.title('Tilted image')
+
+plt.subplot(122)
+plt.imshow(straightened)
+plt.title('Straighened Image')
+
 plt.show()
