@@ -9,7 +9,7 @@ cv2.waitKey(0)
 
 print("Original image shape", image.shape)
 
-#takes image and converts it to greyscale while loading
+#Converts it to greyscale while loading
 image_grey = cv2.imread("../images/hello.jpeg", 0)
 cv2.imshow("New image", image_grey)
 cv2.waitKey(0)
